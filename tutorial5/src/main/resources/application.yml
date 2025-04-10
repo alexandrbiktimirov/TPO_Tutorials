@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: tutorial5
+  banner:
+    location: logo-app

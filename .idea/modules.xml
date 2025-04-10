@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TPO_Tutorials.iml" filepath="$PROJECT_DIR$/.idea/TPO_Tutorials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tutorial2/tutorial2.iml" filepath="$PROJECT_DIR$/tutorial2/tutorial2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tutorial3/tutorial3.iml" filepath="$PROJECT_DIR$/tutorial3/tutorial3.iml" />
     </modules>
   </component>
 </project>

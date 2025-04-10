@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, serif;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 auto;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+h1, input{
+    font-weight: bold;
+    margin: 0.5em;
+}
+
+h1{
+    font-size: 1.7em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.exception{
+    color: red;
+    font-weight: bold;
+}

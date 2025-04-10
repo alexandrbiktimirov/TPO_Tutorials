@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversion</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Please fill the following form:</h1>
+        <form action="/convert" method="post">
+          <label for="value">Value:</label><br>
+          <input type="text" id="value" name="value" required><br>
+          <label for="fromBase">From base:</label><br>
+          <input type="text" id="fromBase" name="fromBase" placeholder="2-100" required><br>
+          <label for="toBase">To base:</label><br>
+          <input type="text" id="toBase" name="toBase" placeholder="2-100" required><br>
+          <input type="submit" value="Convert"><br>
+        </form>
+    </div>
+</body>
+</html>
