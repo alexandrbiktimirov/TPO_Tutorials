@@ -1,0 +1,121 @@
+language,translation
+
+en-US,First Name
+en-US,Last Name
+en-US,Date of Birth
+en-US,Address
+en-US,University
+en-US,Country
+en-US,Email
+en-US,Phone Number
+en-US,Gender
+en-US,Job
+en-US,Company
+
+pl,Imię
+pl,Nazwisko
+pl,Data urodzenia
+pl,Adres
+pl,Uniwersytet
+pl,Kraj
+pl,Email
+pl,Numer telefonu
+pl,Płeć
+pl,Zawód
+pl,Firma
+
+de,Vorname
+de,Nachname
+de,Geburtsdatum
+de,Adresse
+de,Universität
+de,Land
+de,E-Mail
+de,Telefonnummer
+de,Geschlecht
+de,Beruf
+de,Firma
+
+fr,Prénom
+fr,Nom de famille
+fr,Date de naissance
+fr,Adresse
+fr,Université
+fr,Pays
+fr,Email
+fr,Numéro de téléphone
+fr,Sexe
+fr,Emploi
+fr,Entreprise
+
+it,Nome
+it,Cognome
+it,Data di nascita
+it,Indirizzo
+it,Università
+it,Paese
+it,Email
+it,Numero di telefono
+it,Genere
+it,Lavoro
+it,Azienda
+
+es_ES,Nombre
+es_ES,Apellido
+es_ES,Fecha de nacimiento
+es_ES,Dirección
+es_ES,Universidad
+es_ES,País
+es_ES,Correo electrónico
+es_ES,Número de teléfono
+es_ES,Género
+es_ES,Trabajo
+es_ES,Empresa
+
+pt,Primeiro nome
+pt,Último nome
+pt,Data de nascimento
+pt,Endereço
+pt,Universidade
+pt,País
+pt,Email
+pt,Número de telefone
+pt,Gênero
+pt,Trabalho
+pt,Empresa
+
+nb_NO,Fornavn
+nb_NO,Etternavn
+nb_NO,Fødselsdato
+nb_NO,Adresse
+nb_NO,Universitet
+nb_NO,Land
+nb_NO,E-post
+nb_NO,Telefonnummer
+nb_NO,Kjønn
+nb_NO,Yrke
+nb_NO,Firma
+
+sv-SE,Förnamn
+sv-SE,Efternamn
+sv-SE,Födelsedatum
+sv-SE,Adress
+sv-SE,Universitet
+sv-SE,Land
+sv-SE,E-post
+sv-SE,Telefonnummer
+sv-SE,Kön
+sv-SE,Yrke
+sv-SE,Företag
+
+nl_NL,Voornaam
+nl_NL,Achternaam
+nl_NL,Geboortedatum
+nl_NL,Adres
+nl_NL,Universiteit
+nl_NL,Land
+nl_NL,E-mail
+nl_NL,Telefoonnummer
+nl_NL,Geslacht
+nl_NL,Beroep
+nl_NL,Bedrijf

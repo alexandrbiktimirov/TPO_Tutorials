@@ -1,0 +1,5 @@
+org\example\tutorial6\Tutorial6Application.class
+org\example\tutorial6\model\Person.class
+org\example\tutorial6\service\FakeDataService.class
+org\example\tutorial6\controller\FakeDataController.class
+org\example\tutorial6\exceptions\InvalidNumberOfEntriesException.class

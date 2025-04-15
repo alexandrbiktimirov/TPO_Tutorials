@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Data generation</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <h1>Please fill the following form</h1>
+        <form action="/generate-data" method="post">
+            <label for="entries">Number of entries to be generated</label><br>
+            <input type="number" id="entries" name="entries" required><br>
+
+            <label for="languages">Language for generated data</label><br>
+            <select id="languages" name="language">
+                <option value="en-US">English</option>
+                <option value="pl">Polish</option>
+                <option value="de">German</option>
+                <option value="fr">French</option>
+                <option value="it">Italian</option>
+                <option value="es_ES">Spanish</option>
+                <option value="pt">Portuguese</option>
+                <option value="nb_NO">Norwegian</option>
+                <option value="sv-SE">Swedish</option>
+                <option value="nl_NL">Dutch</option>
+            </select><br>
+
+            <label>Additional fields to be generated</label><br>
+            <div class="checkboxes">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="address" name="fields" value="address">
+                    <label for="address">Address</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="university" name="fields" value="university">
+                    <label for="university">University</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="country" name="fields" value="country">
+                    <label for="country">Country of origin</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="email" name="fields" value="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="phoneNumber" name="fields" value="phoneNumber">
+                    <label for="phoneNumber">Phone Number</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="gender" name="fields" value="gender">
+                    <label for="gender">Gender</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="job" name="fields" value="job">
+                    <label for="job">Job</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="company" name="fields" value="company">
+                    <label for="company">Company</label>
+                </div>
+            </div>
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+
+    <h2 class="exception" th:if="${exception}" th:text="${exception}"></h2>
+
+    <div th:if="${people}">
+        <h2>Generated People</h2>
+        <table >
+            <thead>
+                <tr>
+                    <th th:text="'#'"></th>
+                    <th th:text="${headers[0]}"></th>
+                    <th th:text="${headers[1]}"></th>
+                    <th th:text="${headers[2]}"></th>
+
+                    <th th:if="${people[0].address}" th:text="${headers[3]}"></th>
+                    <th th:if="${people[0].university}" th:text="${headers[4]}"></th>
+                    <th th:if="${people[0].country}" th:text="${headers[5]}"></th>
+                    <th th:if="${people[0].email}" th:text="${headers[6]}"></th>
+                    <th th:if="${people[0].phoneNumber}" th:text="${headers[7]}"></th>
+                    <th th:if="${people[0].gender}" th:text="${headers[8]}"></th>
+                    <th th:if="${people[0].job}" th:text="${headers[9]}"></th>
+                    <th th:if="${people[0].company}" th:text="${headers[10]}"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="person, iter : ${people}">
+                    <td th:text="${iter.count}"></td>
+                    <td th:text="${person.firstName}"></td>
+                    <td th:text="${person.lastName}"></td>
+                    <td th:text="${person.dateOfBirth}"></td>
+
+                    <td th:if="${person.address}" th:text="${person.address}"></td>
+                    <td th:if="${person.university}" th:text="${person.university}"></td>
+                    <td th:if="${person.country}" th:text="${person.country}"></td>
+                    <td th:if="${person.email}" th:text="${person.email}"></td>
+                    <td th:if="${person.phoneNumber}" th:text="${person.phoneNumber}"></td>
+                    <td th:if="${person.gender}" th:text="${person.gender}"></td>
+                    <td th:if="${person.job}" th:text="${person.job}"></td>
+                    <td th:if="${person.company}" th:text="${person.company}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
