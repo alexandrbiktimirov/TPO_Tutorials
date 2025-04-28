@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View code</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+<body>
+    <div class="result-wrapper" th:if="${originalCode}">
+        <div class="code-columns">
+            <div class="code-block">
+                <h2>Original</h2>
+                <pre th:text="${originalCode}"></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>Formatted</h2>
+                <pre th:text="${formattedCode}"></pre>
+            </div>
+        </div>
+        <p><a href="/format-code">Press to return back to main page</a></p>
+    </div>
+</body>
+</html>
