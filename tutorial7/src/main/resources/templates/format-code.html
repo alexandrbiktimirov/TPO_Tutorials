@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Data generation</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <h1>Load an existing code</h1>
+        <form action="/view-code" method="post">
+            <label>
+                Text ID
+                <input type="text"  name="id" required>
+            </label>
+
+            <button type="submit">View code</button>
+        </form>
+
+        <h1>Format and save new code</h1>
+        <form action="/format-code" method="post" th:object="${sourceCodeDTO}">
+            <label>
+                Code
+                <textarea th:field="*{code}" required rows="6" cols="60"></textarea>
+            </label>
+            <label>
+                Duration (in seconds)
+                <input type="number" th:field="*{duration}" required min="10" max="7760000">
+            </label>
+            <label>
+                Text ID
+                <input type="text" th:field="*{id}" required>
+            </label>
+
+            <button type="submit">Format</button>
+        </form>
+    </div>
+
+    <div class="result-wrapper" th:if="${originalCode}">
+        <div class="code-columns">
+            <div class="code-block">
+                <h2>Original</h2>
+                <pre th:text="${originalCode}"></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>Formatted</h2>
+                <pre th:text="${formattedCode}"></pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
