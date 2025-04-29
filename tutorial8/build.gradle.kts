@@ -21,7 +21,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.google.googlejavaformat:google-java-format:1.26.0")
-    implementation("org.gradle:gradle-bootstrap:6.0.1")
     implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.4.1")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")

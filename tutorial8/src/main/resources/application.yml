@@ -6,4 +6,4 @@ spring:
 
 server:
   servlet:
-    context-path: /codeFormater
+    context-path: /codeFormatter

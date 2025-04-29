@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <header th:fragment="myHeader">
+        <img class="logo" th:src="@{/images/logo.png}" alt="PJAIT Logo">
+        <h1 th:text="${header}">Code Formatter</h1>
+    </header>
+    <footer th:fragment="myFooter">
+        s30175 @ PJAIT &copy; 2025
+    </footer>
+</body>
+</html>
