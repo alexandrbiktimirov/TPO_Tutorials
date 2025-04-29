@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>View code</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
 </head>
 <body>
     <div class="result-wrapper" th:if="${originalCode}">
@@ -18,7 +18,7 @@
                 <pre th:text="${formattedCode}"></pre>
             </div>
         </div>
-        <p><a href="/format-code">Press to return back to main page</a></p>
+        <p><a th:href="@{/format-code}">Press to return back to main page</a></p>
     </div>
 </body>
 </html>

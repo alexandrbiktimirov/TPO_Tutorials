@@ -3,3 +3,7 @@ spring:
     name: tutorial8
   banner:
     location: logo-app
+
+server:
+  servlet:
+    context-path: /codeFormater

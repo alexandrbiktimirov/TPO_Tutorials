@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Error</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
 </head>
 <body>
     <div class="exception-wrapper">
         <h1 class="exception" th:text="${errorMessage}"></h1>
-        <p><a href="/format-code">Press to return back to main page</a></p>
+        <p><a th:href="@{/format-code}">Press to return back to main page</a></p>
     </div>
 </body>
 </html>

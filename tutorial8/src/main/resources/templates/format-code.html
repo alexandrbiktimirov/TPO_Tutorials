@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Data generation</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
 </head>
 <body>
     <div class="form-wrapper">
         <h1>Load an existing code</h1>
-        <form action="/view-code" method="post">
+        <form th:action="@{/view-code}" method="post">
             <label>
                 Text ID
                 <input type="text"  name="id" required>
@@ -18,7 +18,7 @@
         </form>
 
         <h1>Format and save new code</h1>
-        <form action="/format-code" method="post" th:object="${sourceCodeDTO}">
+        <form th:action="@{/format-code}" method="post" th:object="${sourceCodeDTO}">
             <label>
                 Code
                 <textarea th:field="*{code}" required rows="6" cols="60"></textarea>
