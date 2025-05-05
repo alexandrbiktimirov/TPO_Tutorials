@@ -5,16 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Error</title>
-    <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <header th:replace="~{fragments :: myHeader}"></header>
-    <main layout:fragment="content">
-        <div class="exception-wrapper">
-            <h1 class="exception" th:text="${errorMessage}"></h1>
-            <p><a th:href="@{/format-code}">Press to return back to main page</a></p>
+
+    <main layout:fragment="content" class="container d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+        <div class="card w-100 w-md-50 mx-auto">
+            <div class="card-body text-center">
+                <div class="alert alert-danger mb-4" role="alert" th:text="${errorMessage}"></div>
+                <a th:href="@{/format-code}" class="btn btn-secondary">Return to main page</a>
+            </div>
         </div>
     </main>
+
     <footer th:replace="~{fragments :: myFooter}"></footer>
 </body>
 </html>

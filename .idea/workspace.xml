@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Add layouts and fragments">
+    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Add layouts and fragments to every HTML file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/java/org/example/controller/FormatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/java/org/example/controller/FormatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/static/stylesheets/styles.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/format-code.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/format-code.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/fragments.html" afterDir="false" />
@@ -216,7 +216,7 @@
       <workItem from="1745919472640" duration="309000" />
       <workItem from="1745935363723" duration="20000" />
       <workItem from="1746362014625" duration="2896000" />
-      <workItem from="1746430550419" duration="724000" />
+      <workItem from="1746430550419" duration="5216000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -250,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745913622565</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add layouts and fragments to every HTML file">
+      <option name="closed" value="true" />
+      <created>1746431305087</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746431305087</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +275,7 @@
     <MESSAGE value="Add context path" />
     <MESSAGE value="Add Bootstrap and Thymeleaf layout dependencies" />
     <MESSAGE value="Add layouts and fragments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add layouts and fragments" />
+    <MESSAGE value="Add layouts and fragments to every HTML file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add layouts and fragments to every HTML file" />
   </component>
 </project>

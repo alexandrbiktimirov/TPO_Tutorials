@@ -1,57 +1,75 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+<html lang="en"
+      xmlns:th="https://www.thymeleaf.org/"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
     <title>Code formatting</title>
-    <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
 </head>
 <body>
     <header th:replace="~{fragments :: myHeader}"></header>
-    <main layout:fragment="content">
-        <div class="form-wrapper">
-            <h1>Load an existing code</h1>
-            <form th:action="@{/view-code}" method="post">
-                <label>
-                    Text ID
-                    <input type="text"  name="id" required>
-                </label>
+    <main layout:fragment="content" class="flex-fill mb-5">
+        <div class="container mt-5 d-flex flex-column align-items-center">
 
-                <button type="submit">View code</button>
-            </form>
-
-            <h1>Format and save new code</h1>
-            <form th:action="@{/format-code}" method="post" th:object="${sourceCodeDTO}">
-                <label>
-                    Code
-                    <textarea th:field="*{code}" required rows="6" cols="60"></textarea>
-                </label>
-                <label>
-                    Duration (in seconds)
-                    <input type="number" th:field="*{duration}" required min="10" max="7760000">
-                </label>
-                <label>
-                    Text ID
-                    <input type="text" th:field="*{id}" required>
-                </label>
-
-                <button type="submit">Format</button>
-            </form>
-        </div>
-
-        <div class="result-wrapper" th:if="${originalCode}">
-            <div class="code-columns">
-                <div class="code-block">
-                    <h2>Original</h2>
-                    <pre th:text="${originalCode}"></pre>
-                </div>
-
-                <div class="code-block">
-                    <h2>Formatted</h2>
-                    <pre th:text="${formattedCode}"></pre>
+            <div class="card mb-5 w-100" style="max-width: 600px;">
+                <div class="card-body">
+                    <h1 class="card-title mb-4 text-center">Load an existing code</h1>
+                    <form th:action="@{/view-code}" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Text ID</label>
+                            <input type="text" name="id" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">View code</button>
+                    </form>
                 </div>
             </div>
+
+            <div class="card w-100" style="max-width: 600px;">
+                <div class="card-body">
+                    <h1 class="card-title mb-4 text-center">Format and save new code</h1>
+                    <form th:action="@{/format-code}" method="post" th:object="${sourceCodeDTO}">
+                        <div class="mb-3">
+                            <label class="form-label">Code</label>
+                            <textarea th:field="*{code}" class="form-control" rows="6" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Duration (in seconds)</label>
+                            <input type="number" th:field="*{duration}"
+                                   class="form-control" min="10" max="7760000" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Text ID</label>
+                            <input type="text" th:field="*{id}" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Format</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-lg-2 g-4 mt-5 w-100" th:if="${originalCode}">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header text-center">Original</div>
+                        <div class="card-body p-0">
+                  <pre class="bg-light m-0 p-3 overflow-auto"
+                       style="max-height: 400px;"
+                       th:text="${originalCode}"></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header text-center">Formatted</div>
+                        <div class="card-body p-0">
+                  <pre class="bg-light m-0 p-3 overflow-auto"
+                       style="max-height: 400px;"
+                       th:text="${formattedCode}"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
     <footer th:replace="~{fragments :: myFooter}"></footer>
