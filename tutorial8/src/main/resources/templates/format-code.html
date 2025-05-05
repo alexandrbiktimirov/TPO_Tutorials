@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="https://www.thymeleaf.org/"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <meta charset="UTF-8">
-    <title>Code formatting</title>
+    <title>Main</title>
 </head>
 <body>
-    <header th:replace="~{fragments :: myHeader}"></header>
-    <main layout:fragment="content" class="flex-fill mb-5">
+    <main layout:fragment="content" class="flex-fill" style="margin-bottom: 4rem">
         <div class="container mt-5 d-flex flex-column align-items-center">
 
             <div class="card mb-5 w-100" style="max-width: 600px;">
@@ -20,7 +17,7 @@
                             <label class="form-label">Text ID</label>
                             <input type="text" name="id" class="form-control" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">View code</button>
+                        <button type="submit" class="btn btn-primary w-100">View code</button>
                     </form>
                 </div>
             </div>
@@ -42,7 +39,7 @@
                             <label class="form-label">Text ID</label>
                             <input type="text" th:field="*{id}" class="form-control" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Format</button>
+                        <button type="submit" class="btn btn-primary w-100">Format</button>
                     </form>
                 </div>
             </div>
@@ -72,6 +69,5 @@
 
         </div>
     </main>
-    <footer th:replace="~{fragments :: myFooter}"></footer>
 </body>
 </html>
