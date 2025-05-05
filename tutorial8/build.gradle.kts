@@ -7,12 +7,6 @@ plugins {
 group = "org.example"
 version = "0.0.1-SNAPSHOT"
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(22)
-    }
-}
-
 repositories {
     mavenCentral()
 }
@@ -21,7 +15,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.google.googlejavaformat:google-java-format:1.26.0")
-    implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.4.1")
+    implementation("org.webjars:bootstrap:5.3.5")
+    implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.4.0")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
