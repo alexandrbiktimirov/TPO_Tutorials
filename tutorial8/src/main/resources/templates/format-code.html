@@ -8,7 +8,8 @@
     <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
 </head>
 <body>
-    <main>
+    <header th:replace="~{fragments :: myHeader}"></header>
+    <main layout:fragment="content">
         <div class="form-wrapper">
             <h1>Load an existing code</h1>
             <form th:action="@{/view-code}" method="post">
@@ -53,5 +54,6 @@
             </div>
         </div>
     </main>
+    <footer th:replace="~{fragments :: myFooter}"></footer>
 </body>
 </html>

@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
     <meta charset="UTF-8">
     <title>Error</title>
     <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
 </head>
 <body>
-    <div class="exception-wrapper">
-        <h1 class="exception" th:text="${errorMessage}"></h1>
-        <p><a th:href="@{/format-code}">Press to return back to main page</a></p>
-    </div>
+    <header th:replace="~{fragments :: myHeader}"></header>
+    <main layout:fragment="content">
+        <div class="exception-wrapper">
+            <h1 class="exception" th:text="${errorMessage}"></h1>
+            <p><a th:href="@{/format-code}">Press to return back to main page</a></p>
+        </div>
+    </main>
+    <footer th:replace="~{fragments :: myFooter}"></footer>
 </body>
 </html>

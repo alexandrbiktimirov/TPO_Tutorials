@@ -27,7 +27,7 @@ public class FormatController {
 
     @PostMapping("/view-code")
     public RedirectView viewCode(String id){
-        return new RedirectView("/format-code/" + id);
+        return new RedirectView("/codeFormatter/format-code/" + id);
     }
 
     @PostMapping("/format-code")

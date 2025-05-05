@@ -5,7 +5,7 @@
     <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE"></title>
 </head>
 <body>
-    <header th:replace="~{fragments :: myHeader}"></header>
+    <header th:replace="~{fragments :: myHeader(header='Code formatter')}"></header>
 
     <main layout:fragment="content"></main>
 

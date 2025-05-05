@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Add Bootstrap and Thymeleaf layout dependencies">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Add layouts and fragments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/java/org/example/configuration/FormatConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/java/org/example/configuration/FormatConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/static/stylesheets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/static/stylesheets/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/java/org/example/controller/FormatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/java/org/example/controller/FormatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/format-code.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/format-code.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/view-code.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/view-code.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +116,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "22",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/tutorial6",
+    "last_opened_file_path": "C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/TPO_Tutorials",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -220,7 +212,11 @@
       <workItem from="1745827341833" duration="1241000" />
       <workItem from="1745828617474" duration="1924000" />
       <workItem from="1745871677934" duration="48000" />
-      <workItem from="1745908390699" duration="4719000" />
+      <workItem from="1745908390699" duration="5007000" />
+      <workItem from="1745919472640" duration="309000" />
+      <workItem from="1745935363723" duration="20000" />
+      <workItem from="1746362014625" duration="2896000" />
+      <workItem from="1746430550419" duration="724000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -246,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745910777645</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add layouts and fragments">
+      <option name="closed" value="true" />
+      <created>1745913622565</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745913622565</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +266,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add context path" />
     <MESSAGE value="Add Bootstrap and Thymeleaf layout dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Bootstrap and Thymeleaf layout dependencies" />
+    <MESSAGE value="Add layouts and fragments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add layouts and fragments" />
   </component>
 </project>
