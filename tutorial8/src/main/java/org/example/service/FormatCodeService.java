@@ -50,7 +50,7 @@ public class FormatCodeService {
         File file = new File("data/code_" + id + ".ser");
 
         if (!file.exists()) {
-            throw new CodeNotFoundException("No code under ID " + id);
+            throw new CodeNotFoundException("No code with ID: " + id);
         }
 
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file))) {
