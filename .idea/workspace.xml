@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Add layouts and fragments to every HTML file">
+    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Optimize metadata and layout">
+      <change afterPath="$PROJECT_DIR$/tutorial9/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/src/main/java/org/example/tutorial9/Tutorial9Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/src/main/resources/logo-app" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial9/src/test/java/org/example/tutorial9/Tutorial9ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/static/stylesheets/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/format-code.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/format-code.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/view-code.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial8/src/main/resources/templates/view-code.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial7/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial7/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +32,9 @@
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/tutorial8">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/tutorial9">
       <ProjectState />
     </projectState>
   </component>
@@ -95,6 +107,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Tutorial6Application.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "Gradle.Build tutorial7.executor": "Run",
@@ -116,21 +129,24 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "22",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/TPO_Tutorials",
+    "last_opened_file_path": "C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/TPO_Tutorials/tutorial9/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial9\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial8\src\main\resources\static\images" />
     </key>
@@ -172,10 +188,26 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Tutorial7Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="tutorial7.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutorial7.Tutorial7Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tutorial8Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="tutorial8.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.Tutorial8Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tutorial9Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="tutorial9.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutorial9.Tutorial9Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -216,7 +248,11 @@
       <workItem from="1745919472640" duration="309000" />
       <workItem from="1745935363723" duration="20000" />
       <workItem from="1746362014625" duration="2896000" />
-      <workItem from="1746430550419" duration="5216000" />
+      <workItem from="1746430550419" duration="5634000" />
+      <workItem from="1746462424698" duration="132000" />
+      <workItem from="1746463029157" duration="4068000" />
+      <workItem from="1746528428985" duration="657000" />
+      <workItem from="1746801777711" duration="1243000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -258,13 +294,46 @@
       <option name="project" value="LOCAL" />
       <updated>1746431305087</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Replace styles.css with Bootstrap">
+      <option name="closed" value="true" />
+      <created>1746436781159</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746436781159</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update version of thymeleaf layout">
+      <option name="closed" value="true" />
+      <created>1746467007038</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746467007038</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix grammar mistake">
+      <option name="closed" value="true" />
+      <created>1746467062419</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746467062419</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Optimize metadata and layout">
+      <option name="closed" value="true" />
+      <created>1746467087649</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746467087649</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/tutorial4" />
       <path value="$PROJECT_DIR$/tutorial4_2" />
@@ -276,6 +345,10 @@
     <MESSAGE value="Add Bootstrap and Thymeleaf layout dependencies" />
     <MESSAGE value="Add layouts and fragments" />
     <MESSAGE value="Add layouts and fragments to every HTML file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add layouts and fragments to every HTML file" />
+    <MESSAGE value="Replace styles.css with Bootstrap" />
+    <MESSAGE value="Update version of thymeleaf layout" />
+    <MESSAGE value="Fix grammar mistake" />
+    <MESSAGE value="Optimize metadata and layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimize metadata and layout" />
   </component>
 </project>
