@@ -1,11 +1,18 @@
 package org.example.tutorial9.controller;
 
+import org.example.tutorial9.service.ApplicationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/api/v1")
-public class MainController {
+public class ApplicationController {
+
+    private final ApplicationService applicationService;
+
+    public ApplicationController(ApplicationService applicationService) {
+        this.applicationService = applicationService;
+    }
 
     @GetMapping("/BMI")
     @ResponseBody
