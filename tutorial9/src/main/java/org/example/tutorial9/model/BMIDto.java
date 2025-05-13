@@ -1,8 +1,5 @@
 package org.example.tutorial9.model;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-
-@JacksonXmlRootElement
 public class BMIDto {
     private double weight;
     private double height;
@@ -35,11 +32,11 @@ public class BMIDto {
         this.height = height;
     }
 
-    public double getBmi() {
-        return bmi;
+    public int getBmi() {
+        return (int)bmi;
     }
 
-    public void setBmi(double bmi) {
+    public void setBmi(int bmi) {
         this.bmi = bmi;
     }
 

@@ -1,8 +1,5 @@
 package org.example.tutorial9.model;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-
-@JacksonXmlRootElement
 public class BMRDto {
     private String gender;
     private double weight;

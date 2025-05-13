@@ -23,14 +23,11 @@ public class ApplicationController {
     }
 
     @GetMapping(path = "/BMI", produces = {
-            MediaType.APPLICATION_JSON_VALUE,
-            MediaType.APPLICATION_XML_VALUE,
             MediaType.TEXT_PLAIN_VALUE
     })
     @ResponseBody
-    public ResponseEntity<?> BMI(@RequestParam double weight,
-                                 @RequestParam double height,
-                                 @RequestHeader(value = "Accept", defaultValue = MediaType.TEXT_PLAIN_VALUE) String format) {
+    public ResponseEntity<String> BMITextPlain(@RequestParam double weight,
+                                 @RequestParam double height) {
         try {
             applicationService.validateData(weight, height);
         } catch (InvalidWeightException | InvalidHeightException e) {
@@ -39,53 +36,71 @@ public class ApplicationController {
 
         double result = applicationService.calculateBMI(weight, height);
 
-        if (format.equals("text/plain")) {
-            return ResponseEntity.ok().contentType(MediaType.TEXT_PLAIN).body(String.format("%.2f", result));
+        return ResponseEntity.ok().body(String.format("%.2f", result));
+    }
+
+    @GetMapping(path = "/BMI", produces = {
+            MediaType.APPLICATION_JSON_VALUE,
+            MediaType.APPLICATION_XML_VALUE,
+    })
+    @ResponseBody
+    public ResponseEntity<?> BMI(@RequestParam double weight,
+                                 @RequestParam double height) {
+        try {
+            applicationService.validateData(weight, height);
+        } catch (InvalidWeightException | InvalidHeightException e) {
+            return ResponseEntity.badRequest().header("Reason", "Invalid data, weight and height parameters must be positive numbers").body(e.getMessage());
         }
+
+        double result = applicationService.calculateBMI(weight, height);
 
         BMIType type = applicationService.determineBMIType(result);
-        BMIDto bmiDto = new BMIDto(weight, height, Math.round(result), type);
+        BMIDto bmiDto = new BMIDto(weight, height, result, type);
 
-        if(format.equals("application/json")){
-            return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(bmiDto);
-        } else if (format.equals("application/xml")) {
-            return ResponseEntity.ok().contentType(MediaType.APPLICATION_XML).body(bmiDto);
-        } else{
-            return ResponseEntity.ok().contentType(MediaType.TEXT_PLAIN).body(String.format("%.2f", result));
+        return ResponseEntity.ok().body(bmiDto);
+    }
+
+    @GetMapping(path = "/BMR/{gender}", produces = {
+            MediaType.TEXT_PLAIN_VALUE
+    })
+    @ResponseBody
+    public ResponseEntity<String> BMRTextPlain(@PathVariable String gender,
+                                 @RequestParam double weight,
+                                 @RequestParam double height,
+                                 @RequestParam int age) {
+        try {
+            applicationService.validateData(gender, weight, height, age);
+        } catch (InvalidWeightException | InvalidHeightException | InvalidAgeException e) {
+            return ResponseEntity.status(499).header("Reason", "Invalid data, weight, height and age parameters must be positive numbers").body(e.getMessage());
+        } catch(InvalidGenderException e){
+            return ResponseEntity.badRequest().header("Reason", "Invalid gender data").body(e.getMessage());
         }
+
+        int result = applicationService.calculateBMR(gender, weight, height, age);
+
+        return ResponseEntity.ok().body(result + "kcal");
     }
 
     @GetMapping(path = "/BMR/{gender}", produces = {
             MediaType.APPLICATION_JSON_VALUE,
             MediaType.APPLICATION_XML_VALUE,
-            MediaType.TEXT_PLAIN_VALUE
     })
     @ResponseBody
     public ResponseEntity<?> BMR(@PathVariable String gender,
                                  @RequestParam double weight,
                                  @RequestParam double height,
-                                 @RequestParam int age,
-                                 @RequestHeader(value = "Accept", defaultValue = MediaType.TEXT_PLAIN_VALUE) String format) {
+                                 @RequestParam int age) {
         try {
             applicationService.validateData(gender, weight, height, age);
-        } catch (InvalidWeightException | InvalidHeightException | InvalidGenderException | InvalidAgeException e) {
+        } catch (InvalidWeightException | InvalidHeightException | InvalidAgeException e) {
             return ResponseEntity.status(499).header("Reason", "Invalid data, weight, height and age parameters must be positive numbers").body(e.getMessage());
+        } catch(InvalidGenderException e){
+        return ResponseEntity.badRequest().header("Reason", "Invalid gender data").body(e.getMessage());
         }
 
         int result = applicationService.calculateBMR(gender, weight, height, age);
 
-        if (format.equals("text/plain")) {
-            return ResponseEntity.ok().contentType(MediaType.TEXT_PLAIN).body(result + "kcal");
-        }
-
         BMRDto bmrDto = new BMRDto(gender, weight, height, age, result);
-
-        if(format.equals("application/json")){
-            return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(bmrDto);
-        } else if (format.equals("application/xml")) {
-            return ResponseEntity.ok().contentType(MediaType.APPLICATION_XML).body(bmrDto);
-        } else{
-            return ResponseEntity.ok().contentType(MediaType.TEXT_PLAIN).body(result + "kcal");
-        }
+        return ResponseEntity.ok().body(bmrDto);
     }
 }
