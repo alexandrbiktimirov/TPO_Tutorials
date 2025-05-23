@@ -95,7 +95,7 @@ public class ApplicationController {
         } catch (InvalidWeightException | InvalidHeightException | InvalidAgeException e) {
             return ResponseEntity.status(499).header("Reason", "Invalid data, weight, height and age parameters must be positive numbers").body(e.getMessage());
         } catch(InvalidGenderException e){
-        return ResponseEntity.badRequest().header("Reason", "Invalid gender data").body(e.getMessage());
+            return ResponseEntity.badRequest().header("Reason", "Invalid gender data").body(e.getMessage());
         }
 
         int result = applicationService.calculateBMR(gender, weight, height, age);
