@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create link</title>
+</head>
+<body>
+    <form th:action="@{/api/links}" th:object="createLinkDTO">
+        <label>Name
+            <input type="text" th:field="*{name}" required minlength="5" maxlength="20">
+        </label>
+        <label> Target URL
+            <input type="text" th:field="*{targetUrl}" required>
+        </label>
+        <label> Password (optional)
+            <input type="text" th:field="*{password}">
+        </label>
+    </form>
+</body>
+</html>
