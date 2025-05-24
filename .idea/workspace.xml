@@ -4,25 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Complete Task 10">
       <change afterPath="$PROJECT_DIR$/tutorial10/data/data.mv.db" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tutorial10/data/data.trace.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/controller/RedirectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/exception/InvalidPasswordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/exception/LinkDoesNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/LinkDTOReturn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/UpdateLinkDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/resources/logo-app" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/Tutorial11Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/logo-app" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/test/java/org/example/tutorial11/Tutorial11ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial10/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/controller/LinksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/controller/LinksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/Link.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/NewLinkDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/CreateLinkDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/repository/LinkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/repository/LinkRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/service/LinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/service/LinkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +33,9 @@
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/tutorial10">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/tutorial11">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/tutorial7">
@@ -99,7 +104,7 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2vY78NcAUwKMOBT6PRtTXLs0lvY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -124,6 +129,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.BlogApp.executor": "Run",
     "Spring Boot.FlashcardsApp.executor": "Run",
@@ -135,7 +141,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "22",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/TPO_Tutorials/tutorial10/src/main/resources",
+    "last_opened_file_path": "C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/TPO_Tutorials/tutorial11/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -156,6 +162,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial11\src\main\resources" />
       <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial10\src\main\resources" />
       <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial9\src\main\resources" />
     </key>
@@ -200,10 +207,80 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="BlogApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="tutorial4_2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutorial4_2.BlogApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BooksManagerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="tutorial4" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutorial4.BooksManagerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FlashcardsApp (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="tutorial3" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutorial3.FlashcardsApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FlashcardsApp (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="tutorial3_2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutorial3_2.FlashcardsApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FlashcardsApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="tutorial2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.tutorial2.FlashcardsApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tutorial10Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="tutorial10.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutorial10.Tutorial10Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tutorial11Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="tutorial11.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutorial11.Tutorial11Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tutorial1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="tutorial1" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.tutorial1.Tutorial1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tutorial5Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="tutorial5" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutoria5.Tutorial5Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tutorial6Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="tutorial6" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tutorial6.Tutorial6Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -241,8 +318,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
       </set>
     </attachedChunks>
   </component>
@@ -280,7 +357,8 @@
       <workItem from="1747506274142" duration="8000" />
       <workItem from="1748000659864" duration="1087000" />
       <workItem from="1748003063334" duration="1282000" />
-      <workItem from="1748106766514" duration="7034000" />
+      <workItem from="1748106766514" duration="7305000" />
+      <workItem from="1748115285374" duration="438000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -418,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748004320766</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Complete Task 10">
+      <option name="closed" value="true" />
+      <created>1748113963252</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1748113963252</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,6 +533,7 @@
     <MESSAGE value="Debug the issues" />
     <MESSAGE value="Debug the issues and add good programming practices" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Complete Task 10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Task 10" />
   </component>
 </project>
