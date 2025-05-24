@@ -1,11 +1,15 @@
 package org.example.tutorial10.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import jakarta.annotation.Nullable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Link {
 
+    @Id
     @Column(name = "id")
     private String id;
 
@@ -20,6 +24,10 @@ public class Link {
 
     @Column(name = "visits")
     private int visits;
+
+    @Column(name = "password")
+    @Nullable
+    private String password;
 
     public Link(){
 
@@ -63,5 +71,14 @@ public class Link {
 
     public void setVisits(int visits) {
         this.visits = visits;
+    }
+
+    @Nullable
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(@Nullable String password) {
+        this.password = password;
     }
 }

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: tutorial10
+  banner:
+    location: logo-app
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:h2:file:./tutorial10/data/data
+    username: sa
+    password:

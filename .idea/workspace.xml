@@ -4,25 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Debug the issues and add good programming practices">
-      <change afterPath="$PROJECT_DIR$/tutorial10/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/Tutorial10Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/controller/LinksController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/Link.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/NewLinkDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/src/test/java/org/example/tutorial10/Tutorial10ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial10/data/data.mv.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial10/data/data.trace.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/controller/RedirectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/exception/InvalidPasswordException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/exception/LinkDoesNotExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/LinkDTOReturn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/UpdateLinkDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial10/src/main/resources/logo-app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial9/src/main/java/org/example/tutorial9/controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial9/src/main/java/org/example/tutorial9/controller/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial10/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/controller/LinksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/controller/LinksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/Link.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/Link.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/NewLinkDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/model/dto/CreateLinkDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/repository/LinkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/repository/LinkRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/service/LinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/java/org/example/tutorial10/service/LinkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial10/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +68,7 @@
       <list>
         <option value="HTML File" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -105,49 +106,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Tutorial6Application.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Gradle.Build tutorial7.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build tutorial8.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build tutorial9.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Upgrade Gradle wrapper.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.tutorial8 [bootRun].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tutorial1 [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tutorial6 [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BlogApp.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.FlashcardsApp.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Tutorial6Application.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Tutorial7Application.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Tutorial8Application.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Tutorial9Application.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;22&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/TPO_Tutorials&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Tutorial6Application.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.Build tutorial10.executor": "Run",
+    "Gradle.Build tutorial7.executor": "Run",
+    "Gradle.Build tutorial8.executor": "Run",
+    "Gradle.Build tutorial9.executor": "Run",
+    "Gradle.Upgrade Gradle wrapper.executor": "Run",
+    "Gradle.tutorial8 [bootRun].executor": "Run",
+    "Maven.tutorial1 [clean,install].executor": "Run",
+    "Maven.tutorial6 [clean,install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.BlogApp.executor": "Run",
+    "Spring Boot.FlashcardsApp.executor": "Run",
+    "Spring Boot.Tutorial10Application.executor": "Run",
+    "Spring Boot.Tutorial6Application.executor": "Run",
+    "Spring Boot.Tutorial7Application.executor": "Run",
+    "Spring Boot.Tutorial8Application.executor": "Run",
+    "Spring Boot.Tutorial9Application.executor": "Run",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "22",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/TPO_Tutorials/tutorial10/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial10\src\main\resources" />
       <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial9\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -168,7 +177,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Tutorial9Application">
+  <component name="RunManager" selected="Spring Boot.Tutorial10Application">
     <configuration name="tutorial8 [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -270,7 +279,8 @@
       <workItem from="1747123586343" duration="673000" />
       <workItem from="1747506274142" duration="8000" />
       <workItem from="1748000659864" duration="1087000" />
-      <workItem from="1748003063334" duration="900000" />
+      <workItem from="1748003063334" duration="1282000" />
+      <workItem from="1748106766514" duration="7034000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -400,7 +410,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747122030341</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1748004320766</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1748004320766</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,13 +440,13 @@
     <MESSAGE value="Update version of thymeleaf layout" />
     <MESSAGE value="Fix grammar mistake" />
     <MESSAGE value="Optimize metadata and layout" />
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Add MainController.java" />
     <MESSAGE value="Add BMIService and BMRService" />
     <MESSAGE value="Add custom exceptions" />
     <MESSAGE value="Add data validation" />
     <MESSAGE value="Debug the issues" />
     <MESSAGE value="Debug the issues and add good programming practices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debug the issues and add good programming practices" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>
