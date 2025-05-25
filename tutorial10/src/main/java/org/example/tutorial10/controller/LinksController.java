@@ -9,6 +9,7 @@ import org.example.tutorial10.service.LinkService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 
@@ -26,7 +27,11 @@ public class LinksController {
     public ResponseEntity<LinkDTOReturn> createLink(@RequestBody CreateLinkDTO createLinkDTO) {
         var result = linkService.createLink(createLinkDTO);
 
-        URI location = URI.create("/links/" + result.id);
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(result.id)
+                .toUri();
 
         return ResponseEntity.created(location).body(result);
     }
