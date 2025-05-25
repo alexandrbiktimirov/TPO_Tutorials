@@ -5,6 +5,32 @@
     <title>Display link</title>
 </head>
 <body>
+    <p>ID: <span th:text="${resultDto.id}"></span></p>
+    <p>Redirect URL: <span th:text="${resultDto.redirectUrl}"></span></p>
+    <p>Visits: <span th:text="${resultDto.visits}"></span></p>
 
+    <form th:object="${updateDto}" th:action="@{/links/{id}/edit(id=${returnDTO.id})}" method="post">
+        <label>Name:
+            <input type="text" th:field="*{name}" />
+        </label>
+        <br>
+        <label>Target URL:
+            <input type="text" th:field="*{targetUrl}" />
+        </label>
+        <br>
+        <label>Password:
+            <input type="password" th:field="*{password}" />
+        </label>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+
+    <form th:action="@{/links/{id}/delete(id=${resultLink.id})}" method="post">
+        <label>Provide a password if you want to delete the link:
+            <input type="number" th:value="password" />
+        </label>
+        <br>
+        <button type="submit">Delete</button>
+    </form>
 </body>
 </html>

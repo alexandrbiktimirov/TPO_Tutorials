@@ -1,71 +1,100 @@
 package org.example.tutorial11.controller;
 
+import jakarta.validation.Valid;
 import org.example.tutorial11.exception.InvalidPasswordException;
 import org.example.tutorial11.exception.LinkDoesNotExistException;
+import org.example.tutorial11.exception.TargetUrlAlreadyExists;
 import org.example.tutorial11.model.dto.CreateLinkDTO;
-import org.example.tutorial11.model.dto.LinkDTOReturn;
 import org.example.tutorial11.model.dto.UpdateLinkDTO;
 import org.example.tutorial11.service.LinkService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URI;
-
-@RestController
-@RequestMapping("/api/links")
+@Controller
+@RequestMapping("/")
 public class LinksController {
+
     private final LinkService linkService;
 
     public LinksController(LinkService linkService) {
         this.linkService = linkService;
     }
 
-    @PostMapping
-    @ResponseBody
-    public ResponseEntity<LinkDTOReturn> createLink(@RequestBody CreateLinkDTO createLinkDTO) {
-        var result = linkService.createLink(createLinkDTO);
-
-        URI location = URI.create("/links/" + result.id);
-
-        return ResponseEntity.created(location).body(result);
+    @GetMapping
+    public String mainPage(){
+        return "redirect:/links";
     }
 
-    @GetMapping("/{id}")
-    @ResponseBody
-    public ResponseEntity<LinkDTOReturn> getLink(@PathVariable String id) {
+    @GetMapping("/links")
+    public String linksPage(Model model){
+        model.addAttribute("createLinkDTO", new CreateLinkDTO());
+
+        return "create-link";
+    }
+
+    @PostMapping("/links")
+    public String createLink(@Valid @ModelAttribute("createLinkDTO") CreateLinkDTO createLinkDTO, BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()) {
+            return "create-link";
+        }
+
+        try{
+            var result = linkService.createLink(createLinkDTO);
+            model.addAttribute("resultLink", result);
+
+            return "redirect:/links/" + result.id;
+        } catch(TargetUrlAlreadyExists e){
+            model.addAttribute("reason", e.getMessage());
+
+            return "error";
+        }
+    }
+
+    @GetMapping("/links/{id}")
+    public String getLink(@PathVariable String id, Model model){
         try{
             var result = linkService.getLink(id);
-            return ResponseEntity.ok(result);
+            model.addAttribute("resultDto", result);
+
+            var updateDto = new UpdateLinkDTO();
+            updateDto.setName(result.getName());
+            updateDto.setTargetUrl(result.getTargetUrl());
+            model.addAttribute("updateDto", updateDto);
+
+            return "display-link";
         } catch(LinkDoesNotExistException e){
-            return ResponseEntity.notFound().header("Error", e.getMessage()).build();
+            model.addAttribute("reason", e.getMessage());
+
+            return "error";
         }
     }
 
-    @PatchMapping("/{id}")
-    @ResponseBody
-    public ResponseEntity<?> updateLink(@PathVariable String id, @RequestBody UpdateLinkDTO updateLinkDTO){
+    @PostMapping("/links/{id}/edit")
+    public String updateLink(@PathVariable String id, @ModelAttribute("updateDto") UpdateLinkDTO updateLinkDTO, Model model){
         try{
             linkService.updateLink(id, updateLinkDTO);
-            return ResponseEntity.noContent().build();
-        } catch(LinkDoesNotExistException e){
-            return ResponseEntity.notFound().header("Error", e.getMessage()).build();
         } catch(InvalidPasswordException e){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).header("Reason", e.getMessage()).build();
-        }
+            model.addAttribute("reason", e.getMessage());
+            return "error";
+        } catch(LinkDoesNotExistException ignored){}
+
+        //TODO: pass in html file that the update was successful
+        return "redirect:/links/" + id;
     }
 
-    @DeleteMapping("/{id}")
-    @ResponseBody
-    public ResponseEntity<?> deleteLink(@PathVariable String id, @RequestBody String password) {
+    @PostMapping("/links/{id}/delete")
+    public String deleteLink(@PathVariable String id, String password, Model model){
         try{
             linkService.deleteLink(id, password);
-            return ResponseEntity.noContent().build();
-        } catch(LinkDoesNotExistException e){
-            return ResponseEntity.notFound().header("Error", e.getMessage()).build();
         } catch(InvalidPasswordException e){
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).header("Reason", e.getMessage()).build();
-        }
-    }
+            model.addAttribute("reason", e.getMessage());
 
+            return "error";
+        } catch(LinkDoesNotExistException ignored){}
+
+        //TODO: pass in html file that the deletion went successfully
+        return "create-link";
+    }
 }

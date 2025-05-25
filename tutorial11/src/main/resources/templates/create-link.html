@@ -5,16 +5,23 @@
     <title>Create link</title>
 </head>
 <body>
-    <form th:action="@{/api/links}" th:object="createLinkDTO">
+    <form th:action="@{/links}" th:object="${createLinkDTO}" method="post">
         <label>Name
             <input type="text" th:field="*{name}" required minlength="5" maxlength="20">
+            <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
         </label>
+        <br>
         <label> Target URL
             <input type="text" th:field="*{targetUrl}" required>
+            <div th:if="${#fields.hasErrors('targetUrl')}" th:errors="*{targetUrl}"></div>
         </label>
+        <br>
         <label> Password (optional)
             <input type="text" th:field="*{password}">
+            <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
         </label>
+        <br>
+        <button type="submit">Create</button>
     </form>
 </body>
 </html>

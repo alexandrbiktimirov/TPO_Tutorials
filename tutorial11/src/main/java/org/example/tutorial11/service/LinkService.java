@@ -2,6 +2,7 @@ package org.example.tutorial11.service;
 
 import org.example.tutorial11.exception.InvalidPasswordException;
 import org.example.tutorial11.exception.LinkDoesNotExistException;
+import org.example.tutorial11.exception.TargetUrlAlreadyExists;
 import org.example.tutorial11.model.Link;
 import org.example.tutorial11.model.dto.CreateLinkDTO;
 import org.example.tutorial11.model.dto.LinkDTOReturn;
@@ -33,7 +34,11 @@ public class LinkService {
         return result.toString();
     }
 
-    public LinkDTOReturn createLink(CreateLinkDTO link) {
+    public LinkDTOReturn createLink(CreateLinkDTO link) throws TargetUrlAlreadyExists {
+        if (linkRepository.findLinkByTargetUrl(link.getTargetUrl()).isPresent()) {
+            throw new TargetUrlAlreadyExists("This target URL already exists");
+        }
+
         var newLink = new Link();
 
         String id;
@@ -46,10 +51,7 @@ public class LinkService {
         newLink.setName(link.name);
         newLink.setTargetUrl(link.targetUrl);
         newLink.setRedirectUrl("http://localhost:8080/red/" + id);
-
-        if (link.getPassword().isPresent()) {
-            newLink.setPassword(link.getPassword().get());
-        }
+        newLink.setPassword(link.getPassword());
 
         newLink.setVisits(0);
 

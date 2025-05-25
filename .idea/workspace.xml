@@ -4,27 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Complete Task 10">
-      <change afterPath="$PROJECT_DIR$/tutorial10/data/data.mv.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial10/data/data.trace.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/Tutorial11Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/logo-app" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tutorial11/src/test/java/org/example/tutorial11/Tutorial11ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="f884a1b6-cc2a-4215-99e2-0ffb4dbd830e" name="Changes" comment="Implement CRUD for website">
+      <change afterPath="$PROJECT_DIR$/s30175-TPO10.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/data/data.mv.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/data/data.trace.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/constraint/PasswordValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/constraint/ValidPassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/controller/LinksAPIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/controller/RedirectAPIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/exception/TargetUrlAlreadyExists.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/ValidationMessages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/ValidationMessages_de.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/ValidationMessages_en.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/ValidationMessages_pl.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial10/data/data.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial10/data/data.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/controller/LinksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/controller/LinksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/controller/RedirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/controller/RedirectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/model/dto/CreateLinkDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/model/dto/CreateLinkDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/model/dto/LinkDTOReturn.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/model/dto/LinkDTOReturn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/model/dto/UpdateLinkDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/model/dto/UpdateLinkDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/repository/LinkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/repository/LinkRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/service/LinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/java/org/example/tutorial11/service/LinkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/resources/templates/create-link.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/templates/create-link.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial11/src/main/resources/templates/display-link.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial11/src/main/resources/templates/display-link.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,10 +78,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -116,14 +124,20 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Tutorial6Application.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "false",
     "Gradle.Build tutorial10.executor": "Run",
+    "Gradle.Build tutorial11.executor": "Run",
     "Gradle.Build tutorial7.executor": "Run",
     "Gradle.Build tutorial8.executor": "Run",
     "Gradle.Build tutorial9.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Gradle.tutorial8 [bootRun].executor": "Run",
     "Maven.tutorial1 [clean,install].executor": "Run",
     "Maven.tutorial6 [clean,install].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -134,6 +148,7 @@
     "Spring Boot.BlogApp.executor": "Run",
     "Spring Boot.FlashcardsApp.executor": "Run",
     "Spring Boot.Tutorial10Application.executor": "Run",
+    "Spring Boot.Tutorial11Application.executor": "Run",
     "Spring Boot.Tutorial6Application.executor": "Run",
     "Spring Boot.Tutorial7Application.executor": "Run",
     "Spring Boot.Tutorial8Application.executor": "Run",
@@ -141,17 +156,17 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "22",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/TPO_Tutorials/tutorial11/src/main/resources",
+    "last_opened_file_path": "C:/Users/alexb/Desktop/Distributed Programming Techniques/Code/TPO_Tutorials/tutorial11/src/main/java/org/example/tutorial11",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -162,6 +177,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial11\src\main\java\org\example\tutorial11" />
       <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial11\src\main\resources" />
       <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial10\src\main\resources" />
       <recent name="C:\Users\alexb\Desktop\Distributed Programming Techniques\Code\TPO_Tutorials\tutorial9\src\main\resources" />
@@ -184,7 +200,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Tutorial10Application">
+  <component name="RunManager" selected="Spring Boot.Tutorial11Application">
     <configuration name="tutorial8 [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -358,7 +374,11 @@
       <workItem from="1748000659864" duration="1087000" />
       <workItem from="1748003063334" duration="1282000" />
       <workItem from="1748106766514" duration="7305000" />
-      <workItem from="1748115285374" duration="438000" />
+      <workItem from="1748115285374" duration="811000" />
+      <workItem from="1748116794742" duration="59000" />
+      <workItem from="1748118721279" duration="1904000" />
+      <workItem from="1748174769386" duration="2313000" />
+      <workItem from="1748181756122" duration="10701000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -504,7 +524,31 @@
       <option name="project" value="LOCAL" />
       <updated>1748113963252</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Add tutorial11">
+      <option name="closed" value="true" />
+      <created>1748115955346</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1748115955346</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add forms for inputting data">
+      <option name="closed" value="true" />
+      <created>1748120775714</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1748120775714</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Change URI creation logic">
+      <option name="closed" value="true" />
+      <created>1748177065332</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1748177065332</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,6 +578,10 @@
     <MESSAGE value="Debug the issues and add good programming practices" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Complete Task 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete Task 10" />
+    <MESSAGE value="Add tutorial11" />
+    <MESSAGE value="Add forms for inputting data" />
+    <MESSAGE value="Change URI creation logic" />
+    <MESSAGE value="Implement CRUD for website" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement CRUD for website" />
   </component>
 </project>

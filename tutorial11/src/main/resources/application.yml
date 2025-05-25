@@ -12,3 +12,5 @@ spring:
     url: jdbc:h2:file:./tutorial11/data/data
     username: sa
     password:
+  messages:
+    basename: ValidationMessages
