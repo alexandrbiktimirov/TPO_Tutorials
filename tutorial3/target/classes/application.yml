@@ -1,0 +1,18 @@
+spring:
+  config:
+    import: "TPO03.yml"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      path: /my-h2-console
+  datasource:
+    url: jdbc:h2:file:./data/data
+    username: sa
+    password:
+  banner:
+    location: logo-app
+  profiles:
+    active: ${pl.edu.pja.tpo03.profile}

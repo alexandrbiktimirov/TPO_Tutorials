@@ -1,0 +1,12 @@
+pl:
+  edu:
+    pja:
+      tpo02:
+        filename: "src/main/resources/data.csv"
+        profile: "original" #there are three profiles: upperCase, original, and lowerCase
+
+spring:
+  banner:
+    location: logo-app
+  profiles:
+    active: ${pl.edu.pja.tpo02.profile}
