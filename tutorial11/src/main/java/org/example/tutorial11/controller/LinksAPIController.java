@@ -2,6 +2,7 @@ package org.example.tutorial11.controller;
 
 import org.example.tutorial11.exception.InvalidPasswordException;
 import org.example.tutorial11.exception.LinkDoesNotExistException;
+import org.example.tutorial11.exception.TargetUrlAlreadyExists;
 import org.example.tutorial11.model.dto.CreateLinkDTO;
 import org.example.tutorial11.model.dto.LinkDTOReturn;
 import org.example.tutorial11.model.dto.UpdateLinkDTO;
@@ -37,11 +38,14 @@ public class LinksAPIController {
             return ResponseEntity.badRequest().body(errors);
         }
 
-        var result = linkService.createLink(createLinkDTO);
+        try{
+            var result = linkService.createLink(createLinkDTO);
+            URI location = URI.create("/links/" + result.id);
 
-        URI location = URI.create("/links/" + result.id);
-
-        return ResponseEntity.created(location).body(result);
+            return ResponseEntity.created(location).body(result);
+        } catch(TargetUrlAlreadyExists e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @GetMapping("/{id}")

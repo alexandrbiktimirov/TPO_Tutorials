@@ -80,7 +80,6 @@ public class LinksController {
             return "error";
         } catch(LinkDoesNotExistException ignored){}
 
-        //TODO: pass in html file that the update was successful
         return "redirect:/links/" + id;
     }
 
@@ -94,7 +93,6 @@ public class LinksController {
             return "error";
         } catch(LinkDoesNotExistException ignored){}
 
-        //TODO: pass in html file that the deletion went successfully
-        return "create-link";
+        return "delete-link";
     }
 }
