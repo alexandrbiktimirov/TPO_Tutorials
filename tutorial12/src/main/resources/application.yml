@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: tutorial12
+  datasource:
+    url: jdbc:h2:file:./tutorial12/data/data
+    username: TPO
+    password: TPO_Lecture
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql=true:
+
