@@ -1,98 +1,58 @@
 package com.example.tutorial12.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.fge.jsonpatch.JsonPatchException;
-import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 import com.example.tutorial12.model.Book;
-import com.example.tutorial12.model.BookDTO;
+import com.example.tutorial12.model.Review;
+import com.example.tutorial12.services.BookDtoMapper;
 import com.example.tutorial12.services.BookService;
+import com.example.tutorial12.services.ReviewService;
 
-import java.net.URI;
-import java.util.NoSuchElementException;
-
-@RestController
-@RequestMapping(path="/api/books",
-produces = {MediaType.APPLICATION_JSON_VALUE,
-        MediaType.APPLICATION_XML_VALUE})
+@Controller
+@RequestMapping("/books")
 public class BookController {
-
     private final BookService bookService;
-    private final ObjectMapper objectMapper;
+    private final BookDtoMapper bookDtoMapper;
+    private final ReviewService reviewService;
 
-    public BookController(BookService bookService, ObjectMapper objectMapper) {
+    public BookController(BookService bookService, BookDtoMapper bookDtoMapper, ReviewService reviewService) {
         this.bookService = bookService;
-        this.objectMapper = objectMapper;
+        this.bookDtoMapper = bookDtoMapper;
+        this.reviewService = reviewService;
     }
 
-    @Tag(name = "GET", description = "Get information about books")
     @GetMapping
-    public Iterable<BookDTO> getBooks() {
-        return bookService.getBooks();
+    public String listBooks(
+            @RequestParam(name="search", required=false) String search,
+            Model model
+    ) {
+        List<Book> books;
+        if (search != null && !search.isEmpty()) {
+            books = bookService.searchByTitle(search);
+        } else {
+            books = bookService.getAllBooks();
+        }
+        model.addAttribute("books", books);
+        return "books-list";
     }
 
-    @Tag(name = "GET", description = "Get information about books")
     @GetMapping("/{id}")
-    public ResponseEntity<BookDTO> getBook(@PathVariable int id) {
-        return bookService.getBookById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
-    }
+    public String bookDetails(@PathVariable("id") Integer id, Model model) {
+        Book book = bookService.getBookEntityById(id).orElse(null);
 
-    @Tag(name = "POST", description = "Add new book")
-    @PostMapping
-    public ResponseEntity<BookDTO> saveBook(@RequestBody BookDTO bookDTO) {
-        BookDTO savedBook = bookService.saveBook(bookDTO);
-        URI savedBookLocation = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(savedBook.getBookID())
-                .toUri();
-        return ResponseEntity.created(savedBookLocation).body(savedBook);
-    }
-    //...
-
-    @Tag(name = "POST", description = "Replace book entity")
-    @PutMapping("/{id}")
-    public ResponseEntity<?> replaceBook(@PathVariable int id, @RequestBody BookDTO bookDTO) {
-        return bookService.replaceBook(id, bookDTO)
-                .map(book -> ResponseEntity.noContent().build())
-                .orElse(ResponseEntity.notFound().build());
-    }
-
-    @Tag(name = "PATCH", description = "Update book information")
-    @PatchMapping("/{id}")
-    public ResponseEntity<?> updateBook(@PathVariable int id, @RequestBody JsonMergePatch patch) {
-        try {
-            BookDTO bookDTO = bookService.getBookById(id).orElseThrow();
-            BookDTO patchedBookDTO = applyPatch(bookDTO, patch);
-            bookService.updateBook(patchedBookDTO);
-        }catch (NoSuchElementException ex){
-            return ResponseEntity.notFound().build();
-        } catch (JsonPatchException | JsonProcessingException e) {
-            return ResponseEntity.internalServerError().build();
+        if (book == null) {
+            model.addAttribute("errorMessage", "Book not found");
+            return "redirect:/books";
         }
 
-        return ResponseEntity.noContent().build();
-    }
+        List<Review> reviews = reviewService.findByBookId(id);
+        model.addAttribute("book", book);
+        model.addAttribute("reviews", reviews);
 
-    private BookDTO applyPatch(BookDTO bookDTO, JsonMergePatch patch) throws JsonProcessingException, JsonPatchException {
-        JsonNode bookNode = objectMapper.valueToTree(bookDTO);
-        JsonNode patchNode = patch.apply(bookNode);
-        return objectMapper.treeToValue(patchNode, BookDTO.class);
+        return "books-details";
     }
-
-    @Tag(name = "DELETE", description = "Remove book")
-    @DeleteMapping("/{id}")
-    ResponseEntity<?> deleteBook(@PathVariable int id) {
-        bookService.deleteBook(id);
-        return ResponseEntity.noContent().build();
-    }
-
 }

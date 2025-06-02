@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edit Book</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/}">Library</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" sec:authorize="isAnonymous()">
+          <a class="nav-link" th:href="@{/login}">Login</a>
+        </li>
+        <li class="nav-item" sec:authorize="isAnonymous()">
+          <a class="nav-link" th:href="@{/register/reader}">Register as Reader</a>
+        </li>
+        <li class="nav-item" sec:authorize="isAnonymous()">
+          <a class="nav-link" th:href="@{/register/publisher}">Register as Publisher</a>
+        </li>
+        <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span sec:authentication="name">Username</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>
+            <li sec:authorize="hasRole('ROLE_READER')">
+              <a class="dropdown-item" th:href="@{/reader/reviews}">My Reviews</a>
+            </li>
+            <li sec:authorize="hasRole('ROLE_PUBLISHER')">
+              <a class="dropdown-item" th:href="@{/publisher/books}">Manage Books</a>
+            </li>
+            <li sec:authorize="hasRole('ROLE_LIBRARIAN')">
+              <a class="dropdown-item" th:href="@{/librarian/authors}">Manage Authors</a>
+              <a class="dropdown-item" th:href="@{/librarian/genres}">Manage Genres</a>
+              <a class="dropdown-item" th:href="@{/librarian/publishers}">Manage Publishers</a>
+            </li>
+            <li sec:authorize="hasRole('ROLE_ADMIN')">
+              <a class="dropdown-item" th:href="@{/admin/users}">Admin Panel</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5" style="max-width: 600px;">
+  <h2 class="mb-4">Edit Book</h2>
+  <form th:action="@{'/publisher/books/edit/' + ${book.bookID}}" th:object="${book}" method="post">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" th:field="*{title}" class="form-control" id="title" required/>
+      <span th:if="${#fields.hasErrors('title')}" class="text-danger" th:errors="*{title}"></span>
+    </div>
+
+    <div class="mb-3">
+      <label for="author" class="form-label">Author</label>
+      <select th:field="*{author.authorID}" class="form-select" id="author" required>
+        <option th:each="a : ${authors}" th:value="${a.authorID}" th:text="${a.firstName} + ' ' + ${a.lastName}" th:selected="${a.authorID == book.author.authorID}"></option>
+      </select>
+      <span th:if="${#fields.hasErrors('author')}" class="text-danger" th:errors="*{author}"></span>
+    </div>
+
+    <div class="mb-3">
+      <label for="publisher" class="form-label">Publisher</label>
+      <select th:field="*{publisher.publisherID}" class="form-select" id="publisher" required>
+        <option th:each="p : ${publishers}" th:value="${p.publisherID}" th:text="${p.publisherName} + ', ' + ${p.address} + ', ' + ${p.country}" th:selected="${p.publisherID == book.publisher.publisherID}"></option>
+      </select>
+      <span th:if="${#fields.hasErrors('publisher')}" class="text-danger" th:errors="*{publisher}"></span>
+    </div>
+
+    <div class="mb-3">
+      <label for="genres" class="form-label">Genres</label>
+      <select th:field="*{genres}" multiple class="form-select" id="genres" required>
+        <option th:each="g : ${genres}" th:value="${g.id}" th:text="${g.genreName}" th:selected="${book.genres.contains(g)}"></option>
+      </select>
+      <span th:if="${#fields.hasErrors('genres')}" class="text-danger" th:errors="*{genres}"></span>
+    </div>
+
+    <div class="mb-3">
+      <label for="isbn" class="form-label">ISBN</label>
+      <input type="text" th:field="*{isbn}" class="form-control" id="isbn"/>
+    </div>
+
+    <div class="mb-3">
+      <label for="publicationYear" class="form-label">Publication Year</label>
+      <input type="number" th:field="*{publicationYear}" class="form-control" id="publicationYear"/>
+    </div>
+
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <button type="submit" class="btn btn-success">Update</button>
+  </form>
+</div>
+</body>
+</html>

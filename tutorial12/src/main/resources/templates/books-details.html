@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8" />
+  <title th:text="${book.title} + ' – Details'">Book Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/}">Library</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" sec:authorize="isAnonymous()">
+          <a class="nav-link" th:href="@{/login}">Login</a>
+        </li>
+        <li class="nav-item" sec:authorize="isAnonymous()">
+          <a class="nav-link" th:href="@{/register/reader}">Register as Reader</a>
+        </li>
+        <li class="nav-item" sec:authorize="isAnonymous()">
+          <a class="nav-link" th:href="@{/register/publisher}">Register as Publisher</a>
+        </li>
+        <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span sec:authentication="name">Username</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:href="@{/logout}">Logout</a></li>
+            <li sec:authorize="hasRole('ROLE_READER')">
+              <a class="dropdown-item" th:href="@{/reader/reviews}">My Reviews</a>
+            </li>
+            <li sec:authorize="hasRole('ROLE_PUBLISHER')">
+              <a class="dropdown-item" th:href="@{/publisher/books}">Manage Books</a>
+            </li>
+            <li sec:authorize="hasRole('ROLE_LIBRARIAN')">
+              <a class="dropdown-item" th:href="@{/librarian/authors}">Manage Authors</a>
+              <a class="dropdown-item" th:href="@{/librarian/genres}">Manage Genres</a>
+              <a class="dropdown-item" th:href="@{/librarian/publishers}">Manage Publishers</a>
+            </li>
+            <li sec:authorize="hasRole('ROLE_ADMIN')">
+              <a class="dropdown-item" th:href="@{/admin/users}">Admin Panel</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h2 th:text="${book.title}">Book Title</h2>
+  <ul class="list-group mb-4">
+    <li class="list-group-item">
+      <strong>Author:</strong> <span th:text="${book.author}">Author Name</span>
+    </li>
+    <li class="list-group-item">
+      <strong>Publisher:</strong> <span th:text="${book.publisher}">Publisher Info</span>
+    </li>
+    <li class="list-group-item">
+      <strong>Year:</strong> <span th:text="${book.publicationYear}">2025</span>
+    </li>
+    <li class="list-group-item">
+      <strong>ISBN:</strong> <span th:text="${book.isbn}">1234567890</span>
+    </li>
+    <li class="list-group-item">
+      <strong>Genre(s):</strong>
+      <span th:each="g, stat : ${book.genres}"
+            th:text="${g.genreName}"
+            th:append="${!stat.last} ? ', ' : ''">
+      </span>
+    </li>
+  </ul>
+
+  <div class="mb-4" sec:authorize="hasRole('ROLE_READER')">
+    <a class="btn btn-primary" th:href="@{'/reader/books/' + ${book.id} + '/review'}">Add Review</a>
+  </div>
+
+  <div>
+    <h4>Reviews</h4>
+    <div th:if="${reviews.size() == 0}" class="alert alert-info">
+      No reviews yet.
+    </div>
+    <div th:each="rv : ${reviews}" class="card mb-3">
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">
+          <span th:text="${rv.user.username}">Reviewer</span> —
+          <span th:text="${rv.rating}">5</span> / 5
+        </h6>
+        <p class="card-text" th:text="${rv.content}">Review content here...</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

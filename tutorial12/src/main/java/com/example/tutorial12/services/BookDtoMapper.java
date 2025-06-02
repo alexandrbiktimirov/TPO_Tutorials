@@ -6,7 +6,6 @@ import com.example.tutorial12.repositories.AuthorRepository;
 import com.example.tutorial12.repositories.GenreRepository;
 import com.example.tutorial12.repositories.PublisherRepository;
 
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,7 +23,7 @@ public class BookDtoMapper {
 
     public BookDTO map(Book book) {
         BookDTO bookDTO = new BookDTO();
-        bookDTO.setBookID(book.getBookID());
+        bookDTO.setBookID(book.getId());
         bookDTO.setTitle(book.getTitle());
         bookDTO.setIsbn(book.getIsbn());
         bookDTO.setPublicationYear(book.getPublicationYear());
@@ -36,7 +35,7 @@ public class BookDtoMapper {
 
     public Book map(BookDTO bookDTO) {
         Book book = new Book();
-        book.setBookID(bookDTO.getBookID());
+        book.setId(bookDTO.getBookID());
         book.setTitle(bookDTO.getTitle());
         book.setIsbn(bookDTO.getIsbn());
         book.setPublicationYear(bookDTO.getPublicationYear());

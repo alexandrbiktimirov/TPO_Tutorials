@@ -10,7 +10,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "BookID")
-    private Integer bookID;
+    private Integer id;
 
     @Column(name = "Title")
     private String title;
@@ -37,12 +37,12 @@ public class Book {
     )
     private Set<Genre> genres = new LinkedHashSet<>();
 
-    public Integer getBookID() {
-        return bookID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setBookID(Integer bookID) {
-        this.bookID = bookID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -96,7 +96,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "bookID=" + bookID +
+                "bookID=" + id +
                 ", title=" + title +
                 ", isbn=" + isbn +
                 ", publicationYear=" + publicationYear +
